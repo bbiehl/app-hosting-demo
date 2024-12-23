@@ -1,10 +1,10 @@
-import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
-import { provideRouter } from '@angular/router';
+import { ApplicationConfig, isDevMode, provideZoneChangeDetection } from '@angular/core';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
-import { getAuth, provideAuth } from '@angular/fire/auth';
-import { getFirestore, provideFirestore } from '@angular/fire/firestore';
-import { getStorage, provideStorage } from '@angular/fire/storage';
+import { connectAuthEmulator, getAuth, provideAuth } from '@angular/fire/auth';
+import { connectFirestoreEmulator, getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { connectStorageEmulator, getStorage, provideStorage } from '@angular/fire/storage';
 import { provideClientHydration } from '@angular/platform-browser';
+import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
 
 export const appConfig: ApplicationConfig = {
@@ -28,8 +28,26 @@ export const appConfig: ApplicationConfig = {
                 // messagingSenderId: process.env['MESSAGING_SENDER_ID'],
             })
         ),
-        provideAuth(() => getAuth()),
-        provideFirestore(() => getFirestore()),
-        provideStorage(() => getStorage()),
+        provideAuth(() => {
+            const auth = getAuth();
+            if (isDevMode()) {
+                connectAuthEmulator(auth, 'http://127.0.0.1:9099');
+            }
+            return auth;
+        }),
+        provideFirestore(() => {
+            const firestore = getFirestore();
+            if (isDevMode()) {
+                connectFirestoreEmulator(firestore, '127.0.0.1', 8080);
+            }
+            return firestore;
+        }),
+        provideStorage(() => {
+            const storage = getStorage();
+            if (isDevMode()) {
+                connectStorageEmulator(storage, '127.0.0.1', 9199);
+            }
+            return storage;
+        }),
     ],
 };

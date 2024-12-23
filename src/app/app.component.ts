@@ -10,7 +10,7 @@ import { RouterOutlet } from '@angular/router';
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss',
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit{
     private firestore = inject(Firestore);
     private collectionRef = collection(this.firestore, 'demo');
     items$ = collectionData(this.collectionRef, { idField: 'id' });
@@ -19,5 +19,4 @@ export class AppComponent implements OnInit {
     ngOnInit() {
         console.log(process.env['NODE_ENV']);
     }
-
 }
