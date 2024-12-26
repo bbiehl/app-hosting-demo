@@ -20,19 +20,19 @@ env:
   # Grant access to secrets in Cloud Secret Manager.
   # See https://firebase.google.com/docs/app-hosting/configure#secret-parameters
   - variable: API_ID
-    secret: 1:912650349399:web:af06ddfafabfa05f92ac12
+    secret: app-id
 
   - variable: API_KEY
-    secret: AIzaSyD3I-WXQ8y9GJLDrAkoXR8vPoUrZg0DDp0
+    secret: api-key
 
   - variable: AUTH_DOMAIN
-    secret: fir-app-hosting-e787b.firebaseapp.com
+    secret: auth-domain
 
   - variable: MESSAGING_SENDER_ID
-    secret: 912650349399
+    secret: messaging-sender-id
 
   - variable: PROJECT_ID
-    secret: fir-app-hosting-e787b
+    secret: project-id
 
   - variable: STORAGE_BUCKET
-    secret: fir-app-hosting-e787b.firebasestorage.app
+    secret: storage-bucket
