@@ -1,5 +1,9 @@
 {
   "projects": {
-    "default": "fir-app-hosting-test-707bd"
-  }
+    "default": "fir-app-hosting-e787b",
+    "production": "fir-app-hosting-e787b",
+    "staging": "fir-app-hosting-test-707bd"
+  },
+  "targets": {},
+  "etags": {}
 }
