@@ -8,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app-hosting-demo';
+
+  logEnv(): void {
+    console.log(process.env['MY_SECRET']);
+  }
 }
