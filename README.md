@@ -2,6 +2,21 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.1.
 
+## Accessing Firebase tools (if not already installed)
+1. `npm install -g firebase-tools`
+2. `firebase login`
+
+## App Hosting
+1. Create project aliases (i.e. `production`, `staging`) via `firebase use --add`
+2. Create the default `apphosting.yaml` via `firebase init apphosting`
+3. For your environment-specific configuration, create a file with the name `apphosting.ENVIRONMENT_NAME.yaml` in order to specify environment-specific overrides. This file has the same format as the default apphosting.yaml and must be located in your app's root directory alongside `apphosting.yaml`.
+   > Protip: `touch apphosting.staging.yaml`.
+4. Point to the alias you want to create env variables for (i.e. `staging`). `firebase use staging`.
+   > Protip: to get the project's backend `firebase apphosting:backends:list`.
+5. For each environment, manually set Firebase project config secrets via the project's Google Cloud Secret Manager.
+6. To use each secret, grant the backend's service account access `firebase apphosting:secrets:grantaccess 'mySecretRef' --backend=YOUR_BACKEND`.
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
