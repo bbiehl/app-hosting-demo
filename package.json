@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "emulators": "firebase emulators:start --only auth,firestore,storage",
+    "emulators": "firebase emulators:start --only apphosting,auth,firestore,storage",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
