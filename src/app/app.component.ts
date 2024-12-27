@@ -10,6 +10,6 @@ export class AppComponent {
   title = 'app-hosting-demo';
 
   logEnv(): void {
-    console.log(process.env['MY_SECRET']);
+    console.log(process.env['BLARGH']);
   }
 }
