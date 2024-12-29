@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,10 +6,14 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent {
-  title = 'app-hosting-demo';
+export class AppComponent implements OnInit {
+  title = 'app-hosting-demo-blargh';
 
   logEnv(): void {
     console.log(process.env['BLARGH']);
   }
+
+    ngOnInit(): void {
+        // console.log(process.env);
+    }
 }

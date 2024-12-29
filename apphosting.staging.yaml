@@ -23,9 +23,15 @@ env:
   #   secret: mySecretRef
   - variable: API_KEY
     secret: apiKeyRef
+  - variable: APP_ID
+    secret: appIdRef
   - variable: AUTH_DOMAIN
     secret: authDomainRef
   - variable: BLARGH
     secret: blargh
+  - variable: MESSAGING_SENDER_ID
+    secret: messagingSenderIdRef
   - variable: PROJECT_ID
     secret: projectIdRef
+  - variable: STORAGE_BUCKET
+    secret: storageBucketRef
