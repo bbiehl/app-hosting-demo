@@ -17,13 +17,24 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
    > Protip: `touch apphosting.staging.yaml`.
 4. Point to the alias you want to create env variables for (i.e. `staging`). `firebase use staging`.
    > Protip: to get the project's backend `firebase apphosting:backends:list`.
+
+### Manual Option
+
 5. For each environment, manually set Firebase project config secrets via the project's Google Cloud Secret Manager.
 6. To use each secret, grant the backend's service account access `firebase apphosting:secrets:grantaccess 'mySecretRef' --backend=YOUR_BACKEND`
+
+### CLI Option
+
+5. Set secret variables via `firebase apphosting:secrets:set KEY --project YOUR_BACKEND`
 
 ## Handling Rules
 
 1. Point to the project alias `firebase use ALIAS`
 2. Publish rules (i.e. `Firestore Security Rules`, `Firestore Indexes`, `Firebase Storage Security Rules`) via `firebase deploy`
+
+## Firebase emulators for local development
+
+Run `firebase emulators:start`
 
 ## Development server
 
