@@ -2,9 +2,8 @@
   "emulators": {
     "singleProjectMode": true,
     "apphosting": {
-      "rootDirectory": "./",
-      "startCommand": "npm run start",
-      "port": 5002
+      "port": 5002,
+      "host": "0.0.0.0"
     },
     "ui": {
       "enabled": true,
