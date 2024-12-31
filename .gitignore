@@ -41,6 +41,8 @@ testem.log
 .DS_Store
 Thumbs.db
 
+# Firebase
 apphosting.local.yaml
-firestore-debug.log
-firebase-debug.log
+.firebase
+*-debug.log
+.runtimeconfig.json

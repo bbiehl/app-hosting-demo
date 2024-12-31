@@ -1,29 +1,31 @@
 {
-  "emulators": {
-    "singleProjectMode": true,
-    "apphosting": {
-      "port": 5002,
-      "host": "0.0.0.0"
-    },
-    "ui": {
-      "enabled": true,
-      "port": 4000
-    },
-    "auth": {
-      "port": 9099
+    "emulators": {
+        "singleProjectMode": true,
+        "auth": {
+            "port": 9099
+        },
+        "firestore": {
+            "port": 8080
+        },
+        "storage": {
+            "port": 9199
+        },
+        "ui": {
+            "enabled": true,
+            "port": 4000
+        },
+        "apphosting": {
+            "port": 5002,
+            "host": "127.0.0.1",
+            "rootDirectory": ".",
+            "startCommand": "npm run dev"
+        }
     },
     "firestore": {
-      "port": 8080
+        "rules": "firestore.rules",
+        "indexes": "firestore.indexes.json"
     },
     "storage": {
-      "port": 9199
+        "rules": "storage.rules"
     }
-  },
-  "firestore": {
-    "rules": "firestore.rules",
-    "indexes": "firestore.indexes.json"
-  },
-  "storage": {
-    "rules": "storage.rules"
-  }
 }

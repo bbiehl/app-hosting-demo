@@ -35,3 +35,5 @@ env:
     secret: projectIdRef
   - variable: STORAGE_BUCKET
     secret: storageBucketRef
+  - variable: MEASUREMENT_ID
+    secret: measurementIdRef

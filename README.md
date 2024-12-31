@@ -25,7 +25,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ### CLI Option
 
-5. Set secret variables via `firebase apphosting:secrets:set KEY --project YOUR_BACKEND`
+5. Set secret variables via `firebase apphosting:secrets:set KEY --project YOUR_PROJECT`
 
 ## Handling Rules
 
